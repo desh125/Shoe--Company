@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+
+    <title>crm clients - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fafafa;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1em;
+            font-weight: 300;
+            line-height: 1.7em;
+            color: #999;
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        body{
+            background:#f2f3f7;
+            margin-top:20px;
+        }
+        .m-b-30 {
+            margin-bottom: 30px;
+        }
+        p{
+            color: #8A98AC;
+        }
+        .container {
+            margin-top: 70px; /* Maintain the existing top margin */
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center; /* Horizontally center the form */
+            margin-bottom: 20px; /* Add a margin between form and container */
+        }
+        .table-borderless td {
+            border: 0 !important;
+        }
+        .table td {
+            color: #8A98AC;
+            vertical-align: middle;
+            border-top: 1px solid rgba(0, 0, 0, 0.03);
+            padding: 0.6rem;
+        }
+        .btn-primary-rgba {
+            background-color: rgba(80, 111, 228, 0.1);
+            border: none;
+            color: #506fe4;
+        }
+        .btn-success-rgba {
+            background-color: rgba(67, 209, 135, 0.1);
+            border: none;
+            color: #43d187;
+        }
+        .card {
+            border: none;
+            border-radius: 3px;
+            background-color: #ffffff;
+        }
+        .wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        #sidebar {
+            height: max-content;
+            position: absolute;
+            min-width: 250px;
+            max-width: 250px;
+            background: #7386D5;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #sidebar.active {
+            margin-left: -250px;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #6d7fcc;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+        }
+
+        #sidebar ul li.active>a,
+        a[aria-expanded="true"] {
+            color: #fff;
+            background: #6d7fcc;
+        }
+
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
+
+        .dropdown-toggle::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #6d7fcc;
+        }
+
+        ul.CTAs {
+            padding: 20px;
+        }
+
+        ul.CTAs a {
+            text-align: center;
+            font-size: 0.9em !important;
+            display: block;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        a.download {
+            background: #fff;
+            color: #7386D5;
+        }
+
+        a.article,
+        a.article:hover {
+            background: #6d7fcc !important;
+            color: #fff !important;
+        }
+
+    </style>
+</head>
+<body>
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>Shoes (Pvt) Ltd</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class="active">
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Sales</a>
+        </li>
+        <li>
+            <a href="#">Suppliers</a>
+        </li>
+        <li>
+            <a href="#">Customers</a>
+        </li>
+        <li>
+            <a href="#">Employees</a>
+        </li>
+        <li>
+            <a href="#">Inventory</a>
+        </li>
+        <li>
+            <a href="#">Place an Order</a>
+        </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+        <li>
+            <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+        </li>
+        <li>
+            <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="main-div" style="padding-left: 200px">
+    <h1 style="font-size: 28px;text-align: center;margin-bottom: 40px">Supplier Form</h1>
+    <div class="form-container">
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="supplierCode" class="form-label">Supplier Code</label>
+                        <input type="text" class="form-control" id="supplierCode" placeholder="Enter supplier code">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="supplierName" class="form-label">Supplier Name</label>
+                        <input type="text" class="form-control" id="supplierName" placeholder="Enter supplier name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select form-control" id="category">
+                            <option value="International">International</option>
+                            <option value="Local">Local</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine01" class="form-label">Address Line 01</label>
+                        <input type="text" class="form-control" id="addressLine01" placeholder="Enter building number or name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine02" class="form-label">Address Line 02</label>
+                        <input type="text" class="form-control" id="addressLine02" placeholder="Enter lane">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine03" class="form-label">Address Line 03</label>
+                        <input type="text" class="form-control" id="addressLine03" placeholder="Enter main city">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine04" class="form-label">Address Line 04</label>
+                        <input type="text" class="form-control" id="addressLine04" placeholder="Enter main state">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine05" class="form-label">Address Line 05</label>
+                        <input type="text" class="form-control" id="addressLine05" placeholder="Enter postal code">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine06" class="form-label">Address Line 06</label>
+                        <input type="text" class="form-control" id="addressLine06" placeholder="Enter origin country">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="contactNo1" class="form-label">Contact No.1</label>
+                        <input type="text" class="form-control" id="contactNo1" placeholder="Enter mobile number">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="contactNo2" class="form-label">Contact No.2</label>
+                        <input type="text" class="form-control" id="contactNo2" placeholder="Enter landline number">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email address">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-block" onclick="submitSupplier()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Card section -->
+            <div class="col-lg-6">
+                <div class="card m-b-30">
+                    <div class="card-body py-5">
+                        <div class="row">
+                            <div class="col-lg-3 text-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-fluid mb-3" alt="user" />
+                            </div>
+                            <div class="col-lg-9">
+                                <h4>Supplier Details</h4>
+                                <table class="table table-borderless mb-0">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row" class="p-1">Supplier Code:</th>
+                                        <td class="p-1" id="supplierCodeDisplay">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Supplier Name:</th>
+                                        <td class="p-1" id="supplierNameDisplay">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Category:</th>
+                                        <td class="p-1" id="categoryDisplay">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Address Line 01:</th>
+                                        <td class="p-1" id="addressLine01Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Address Line 02:</th>
+                                        <td class="p-1" id="addressLine02Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Address Line 03:</th>
+                                        <td class="p-1" id="addressLine03Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Address Line 04:</th>
+                                        <td class="p-1" id="addressLine04Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Address Line 05:</th>
+                                        <td class="p-1" id="addressLine05Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Address Line 06:</th>
+                                        <td class="p-1" id="addressLine06Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Contact No.1:</th>
+                                        <td class="p-1" id="contactNo1Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Contact No.2:</th>
+                                        <td class="p-1" id="contactNo2Display">example</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="p-1">Email:</th>
+                                        <td class="p-1" id="emailDisplay">example</td>
+                                    </tr>
+                                    <!-- Add more rows for other fields -->
+                                    </tbody>
+                                </table>
+                                <div class="button-list mt-4 mb-3">
+                                    <button type="button" class="btn btn-primary-rgba"><i class="feather icon-message-square mr-2"></i>Message</button>
+                                    <button type="button" class="btn btn-success-rgba"><i class="feather icon-phone mr-2"></i>Call Now</button>
+                                    <!-- Add an edit button -->
+                                    <button type="button" class="btn btn-info" onclick="openEditModal('Supplier Name')">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for editing details -->
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel">Edit Supplier Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Form fields for editing supplier details -->
+                            <div class="form-group">
+                                <label for="editSupplierCode">Supplier Code</label>
+                                <input type="text" class="form-control" id="editSupplierCode">
+                            </div>
+                            <div class="form-group">
+                                <label for="editSupplierName">Supplier Name</label>
+                                <input type="text" class="form-control" id="editSupplierName">
+                            </div>
+                            <div class="form-group">
+                                <label for="editCategory">Category</label>
+                                <select class="form-control" id="editCategory">
+                                    <option value="International">International</option>
+                                    <option value="Local">Local</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editAddressLine01">Address Line 01</label>
+                                <input type="text" class="form-control" id="editAddressLine01">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAddressLine02">Address Line 02</label>
+                                <input type="text" class="form-control" id="editAddressLine02">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAddressLine03">Address Line 03</label>
+                                <input type="text" class="form-control" id="editAddressLine03">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAddressLine04">Address Line 04</label>
+                                <input type="text" class="form-control" id="editAddressLine04">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAddressLine05">Address Line 05</label>
+                                <input type="text" class="form-control" id="editAddressLine05">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAddressLine06">Address Line 06</label>
+                                <input type="text" class="form-control" id="editAddressLine06">
+                            </div>
+                            <div class="form-group">
+                                <label for="editContactNo1">Contact No.1</label>
+                                <input type="text" class="form-control" id="editContactNo1">
+                            </div>
+                            <div class="form-group">
+                                <label for="editContactNo2">Contact No.2</label>
+                                <input type="text" class="form-control" id="editContactNo2">
+                            </div>
+                            <div class="form-group">
+                                <label for="editEmail">Email</label>
+                                <input type="email" class="form-control" id="editEmail">
+                            </div>
+                            <!-- Add more fields for editing -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="saveChanges()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="../controller/Customers.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
