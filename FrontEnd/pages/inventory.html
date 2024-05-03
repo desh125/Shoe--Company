@@ -220,88 +220,136 @@
     </ul>
 </nav>
 <div class="container">
-    <h1>Inventory Management</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>Item Code</th>
-            <th>Item Description</th>
-            <th>Item Picture</th>
-            <th>Category</th>
-            <th>Size</th>
-            <th>Supplier Code</th>
-            <th>Supplier Name</th>
-            <th>Unit Price - Sale</th>
-            <th>Unit Price - Buy</th>
-            <th>Expected Profit</th>
-            <th>Profit Margin</th>
-            <th>Status</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Data will be populated dynamically here -->
-        </tbody>
-    </table>
-    <h2>Add New Item</h2>
-    <form id="addItemForm">
-        <div class="form-group">
-            <label for="itemCode">Item Code</label>
-            <input type="text" class="form-control" id="itemCode" placeholder="Enter item code" required>
+    <h1 style="padding-bottom: 3vh">Inventory Management</h1>
+    <div class="row" style="padding-left: 15%;padding-bottom: 7vh">
+        <div class="col-md-6">
+            <!-- Add New Item form -->
+            <h2 style="padding-bottom: 5vh">Add New Item</h2><form id="addItemForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="itemCode">Item Code</label>
+                        <input type="text" class="form-control" id="itemCode" placeholder="Enter item code" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="itemDesc">Item Description</label>
+                        <input type="text" class="form-control" id="itemDesc" placeholder="Enter item description" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="itemPicture">Item Picture (Base64)</label>
+                        <input type="text" class="form-control" id="itemPicture" placeholder="Enter item picture as Base64 format">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category" required>
+                            <option value="Sports">Sports</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Formal">Formal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="size">Size</label>
+                        <input type="number" class="form-control" id="size" placeholder="Enter item size" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="supplierCode">Supplier Code</label>
+                        <input type="text" class="form-control" id="supplierCode" placeholder="Enter supplier code" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="supplierName">Supplier Name</label>
+                        <input type="text" class="form-control" id="supplierName" placeholder="Enter supplier name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="unitPriceSale">Unit Price - Sale</label>
+                        <input type="number" class="form-control" id="unitPriceSale" placeholder="Enter sale price" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="unitPriceBuy">Unit Price - Buy</label>
+                        <input type="number" class="form-control" id="unitPriceBuy" placeholder="Enter buy price" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="expectedProfit">Expected Profit</label>
+                        <input type="number" class="form-control" id="expectedProfit" placeholder="Enter expected profit" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="profitMargin">Profit Margin (%)</label>
+                        <input type="number" class="form-control" id="profitMargin" placeholder="Enter profit margin" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select class="form-control" id="status" required>
+                            <option value="Low">Low</option>
+                            <option value="Available">Available</option>
+                            <option value="Not Available">Not Available</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more rows with two inputs in each as needed -->
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+
         </div>
-        <div class="form-group">
-            <label for="itemDesc">Item Description</label>
-            <input type="text" class="form-control" id="itemDesc" placeholder="Enter item description" required>
+     </div>
+    <div class="row" style="padding-left: 15%;">
+        <div class="col-md-12">
+            <!-- Inventory table -->
+            <table>
+                <thead>
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Description</th>
+                    <th>Item Picture</th>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Supplier Code</th>
+                    <th>Supplier Name</th>
+                    <th>Unit Price - Sale</th>
+                    <th>Unit Price - Buy</th>
+                    <th>Expected Profit</th>
+                    <th>Profit Margin</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Data will be populated dynamically here -->
+                </tbody>
+            </table>
         </div>
-        <div class="form-group">
-            <label for="itemPicture">Item Picture (Base64)</label>
-            <input type="text" class="form-control" id="itemPicture" placeholder="Enter item picture as Base64 format">
-        </div>
-        <div class="form-group">
-            <label for="category">Category</label>
-            <select class="form-control" id="category" required>
-                <option value="Sports">Sports</option>
-                <option value="Casual">Casual</option>
-                <option value="Formal">Formal</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="size">Size</label>
-            <input type="number" class="form-control" id="size" placeholder="Enter item size" required>
-        </div>
-        <div class="form-group">
-            <label for="supplierCode">Supplier Code</label>
-            <input type="text" class="form-control" id="supplierCode" placeholder="Enter supplier code" required>
-        </div>
-        <div class="form-group">
-            <label for="supplierName">Supplier Name</label>
-            <input type="text" class="form-control" id="supplierName" placeholder="Enter supplier name" required>
-        </div>
-        <div class="form-group">
-            <label for="unitPriceSale">Unit Price - Sale</label>
-            <input type="number" class="form-control" id="unitPriceSale" placeholder="Enter sale price" required>
-        </div>
-        <div class="form-group">
-            <label for="unitPriceBuy">Unit Price - Buy</label>
-            <input type="number" class="form-control" id="unitPriceBuy" placeholder="Enter buy price" required>
-        </div>
-        <div class="form-group">
-            <label for="expectedProfit">Expected Profit</label>
-            <input type="number" class="form-control" id="expectedProfit" placeholder="Enter expected profit" required>
-        </div>
-        <div class="form-group">
-            <label for="profitMargin">Profit Margin (%)</label>
-            <input type="number" class="form-control" id="profitMargin" placeholder="Enter profit margin" required>
-        </div>
-        <div class="form-group">
-            <label for="status">Status</label>
-            <select class="form-control" id="status" required>
-                <option value="Low">Low</option>
-                <option value="Available">Available</option>
-                <option value="Not Available">Not Available</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Item</button>
-    </form>
+    </div>
+
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
