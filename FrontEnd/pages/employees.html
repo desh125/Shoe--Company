@@ -3,9 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
-
-    <title>crm clients - Bootdey.com</title>
+    <title>Employees</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -350,7 +348,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary btn-block" onclick="submitEmployee()">Submit</button>
+                    <button type="button" class="btn btn-primary btn-block" onclick="submitEmployee()">Submit</button>
                 </div>
             </div>
         </form>
@@ -363,7 +361,7 @@
         <div class="row">
 
             <!-- Card section -->
-            <div class="col-lg-6">
+<!--            <div class="col-lg-6">
                 <div class="card m-b-30">
                     <div class="card-body py-5">
                         <div class="row">
@@ -437,14 +435,14 @@
                                 <div class="button-list mt-4 mb-3">
                                     <button type="button" class="btn btn-primary-rgba"><i class="feather icon-message-square mr-2"></i>Message</button>
                                     <button type="button" class="btn btn-success-rgba"><i class="feather icon-phone mr-2" onclick="deleteCustomer()"></i>Delete</button>
-                                    <!-- Add an edit button -->
+                                    &lt;!&ndash; Add an edit button &ndash;&gt;
                                     <button type="button" class="btn btn-info" onclick="openEditModal('{{Employee name}}')">Edit</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!-- Modal for editing details -->
             <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -547,9 +545,8 @@
     </div>
 
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="../controller/Employees.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

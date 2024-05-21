@@ -1,26 +1,46 @@
 
 function submitEmployee() {
-    var customerData = {
-        name: document.getElementById("customerName").value,
+    console.log("clicked");
+    var employeeData = {
+        employeeCode: document.getElementById("employeeCode").value,
+        employeeName: document.getElementById("employeeName").value,
         gender: document.getElementById("gender").value,
-        // Add other fields as needed
+        status: document.getElementById("status").value,
+        designation: document.getElementById("designation").value,
+        accessRole: document.getElementById("accessRole").value,
+        dob: document.getElementById("dob").value,
+        dateOfJoin: document.getElementById("dateOfJoin").value,
+        attachedBranch: document.getElementById("attachedBranch").value,
+        addressLine01: document.getElementById("addressLine01").value,
+        addressLine02: document.getElementById("addressLine02").value,
+        addressLine03: document.getElementById("addressLine03").value,
+        addressLine04: document.getElementById("addressLine04").value,
+        addressLine05: document.getElementById("addressLine05").value,
+        contactNo: document.getElementById("contactNo").value,
+        email: document.getElementById("email").value,
+        emergencyContact: document.getElementById("emergencyContact").value
     };
-
-    // Make an AJAX POST request to add a new customer
+    console.log("first")
+    const jsonObject = JSON.stringify(employeeData);
     $.ajax({
-        type: "POST",
+        url: "http://localhost:8080/app/api/v1/employees", // Corrected endpoint
+        method: "POST",
+        data: jsonObject,
         contentType: "application/json",
-        url: "/customers/add",
-        data: JSON.stringify(customerData),
-        success: function (data) {
-            alert("Customer added successfully!");
-            // Clear the form after successful submission
-            clearForm();
+        success: function (resp, textStatus, jqxhr) {
+            console.log("Success", resp);
+            if (jqxhr.status == 201) {
+                alert("Added employee successfully");
+            }
         },
-        error: function (error) {
-            alert("Error adding customer: " + error.responseJSON.message);
+        error: function (jqxhr, textStatus, error) {
+            console.log("error: ", jqxhr);
+            console.log("error: ", textStatus);
+            console.log("error: ", error);
         }
     });
+    console.log("second")
+
 }
 
 // Function to retrieve all customers
@@ -146,9 +166,9 @@ function displayEmployees(employees) {
 }
 
 // Call the getAllEmployees function when the page loads
-$(document).ready(function () {
-    getAllEmployees();
-});
+/*$(document).ready(function () {
+   // getAllEmployees();
+});*/
 
 // Function to open edit modal with employee details
 function openEditModal(employee) {
