@@ -17,40 +17,39 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    //GetALL
+
+    // Get all users
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    List<UserDTO> getAllSuppliers(){
-        System.out.println("request received");
+    public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    //GetDetails
+    // Get user details by ID
     @GetMapping(params = {"id"})
-    public ResponseUtil findSupplier(String id) {
+    public ResponseUtil findUser(@RequestParam String id) {
         return new ResponseUtil("Ok", "Successfully Searched", userService.getUserDetails(id));
     }
 
-    //Save
+    // Save a new user
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    UserDTO saveSupplier(@RequestBody UserDTO supplierDTO){
-        return userService.saveUser(supplierDTO);
+    public ResponseUtil saveUser(@RequestBody UserDTO userDTO) {
+        userService.saveUser(userDTO);
+        return new ResponseUtil("Ok", "Successfully Registered", userDTO);
     }
 
-    //Update
+    // Update an existing user
     @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateUser(@PathVariable String id,@RequestBody UserDTO supplierDTO) {
-        System.out.println(supplierDTO);
-        userService.updateUser(id,supplierDTO);
+    public ResponseUtil updateUser(@PathVariable String id, @RequestBody UserDTO userDTO) {
+        userService.updateUser(id, userDTO);
         return new ResponseUtil("Ok", "Update Success", null);
     }
 
-    //Delete
+    // Delete a user
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseUtil deleteSupplier(@PathVariable String id) {
-        System.out.println("Request received to delete Supplier with ID: " + id);
+    public ResponseUtil deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
-        return new ResponseUtil("Ok", "Supplier Deleted Successfully", null);
+        return new ResponseUtil("Ok", "User Deleted Successfully", null);
     }
 }

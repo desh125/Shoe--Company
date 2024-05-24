@@ -17,6 +17,156 @@
       <link rel="stylesheet" href="../assets/vendor/remixicon/fonts/remixicon.css">  </head>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!--      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>-->
+  <style>
+      /* Set background color to black */
+      .data-scrollbar {
+          background-color: black;
+      }
+
+      /* Set font color to white and change font */
+      .iq-sidebar-menu,
+      .iq-sidebar-menu ul,
+      .iq-sidebar-menu ul li,
+      .iq-sidebar-menu ul li a,
+      .iq-sidebar-menu ul li a .ml-4 {
+          color: white;
+          font-family: 'Arial', sans-serif; /* You can change 'Arial' to your preferred font */
+      }
+
+      /* Change font style to oblique as mentioned */
+      .iq-menu {
+          font-style: oblique;
+      }
+
+      /* Adjust svg icon color */
+      .svg-icon {
+          stroke: white;
+      }
+
+      /* Add hover effect for menu items */
+      .iq-sidebar-menu ul li a:hover {
+          background-color: #333;
+          color: white;
+      }
+
+      /* Active menu item styling */
+      .iq-sidebar-menu ul li.active a {
+          background-color: #555;
+          color: white;
+      }
+
+      /* Arrow icon styling */
+      .iq-sidebar-menu .iq-arrow-right {
+          stroke: white;
+      }
+
+      /* Collapse menu arrow icon adjustment */
+      .iq-sidebar-menu ul li a.collapsed .iq-arrow-right {
+          transform: rotate(0deg);
+          transition: transform 0.3s ease;
+      }
+
+      .iq-sidebar-menu ul li a[aria-expanded="true"] .iq-arrow-right {
+          transform: rotate(90deg);
+      }
+
+      /* Change the background color of the active menu item */
+      .iq-sidebar-menu .iq-menu li.active a {
+          background-color: #000000; /* A color similar to black */
+          color: #ffffff !important; /* Ensure the text remains readable */
+      }
+
+      /* Optional: Adjust the background color for hover state for consistency */
+      .iq-sidebar-menu .iq-menu li a:hover {
+          background-color: #000000; /* A slightly lighter color for hover effect */
+          color: #ffffff !important; /* Ensure the text remains readable */
+      }
+
+      /* If you have a specific class for the sidebar */
+      .sidebar-default .iq-sidebar-menu .iq-menu li.active a {
+          background-color: #111111; /* A color similar to black */
+          color: #ffffff; /* Ensure the text remains readable */
+      }
+
+      .sidebar-default .iq-sidebar-menu .iq-menu li a:hover {
+          background-color: #222222; /* A slightly lighter color for hover effect */
+          color: #ffffff; /* Ensure the text remains readable */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li a {
+          color: #d3d3d3; /* Default font color */
+          text-decoration: none;
+      }
+
+      .iq-sidebar-menu ul.iq-menu li a:hover {
+          color: white; /* Change to white on hover */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li ul.iq-submenu li a {
+          color: #d3d3d3; /* Default sub-menu font color */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li ul.iq-submenu li a:hover {
+          color: white; /* Change to white on hover */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li a svg.iq-arrow-right {
+          display: none; /* Hide dropdown SVG icons */
+      }
+
+      /* Increase font size for menu items and sub-menu items */
+      .iq-sidebar-menu ul.iq-menu li a {
+          color: #d3d3d3; /* Default font color */
+          text-decoration: none;
+          font-size: 18px; /* Increase font size */
+          padding: 15px 20px; /* Increase padding for more spacing */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li a:hover {
+          color: white; /* Change to white on hover */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li ul.iq-submenu li a {
+          color: #d3d3d3; /* Default sub-menu font color */
+          font-size: 16px; /* Increase font size for sub-menu items */
+          padding: 10px 20px; /* Increase padding for more spacing */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li ul.iq-submenu li a:hover {
+          color: white; /* Change to white on hover */
+      }
+
+      .iq-sidebar-menu ul.iq-menu li a svg.iq-arrow-right {
+          display: none; /* Hide dropdown SVG icons */
+      }
+
+      /* Center the logo horizontally and vertically */
+      .iq-sidebar-logo {
+          padding-top: 20px;
+      }
+
+      .header-logo {
+          background-color: #007bff;
+          border-color: #007bff;
+          color: white;
+          padding: 0px;
+          border-radius: 5px;
+      }
+
+      /* Top navbar background color */
+      .iq-top-navbar {
+          background-color: black;
+      }
+
+      /* Align menu items to the end */
+      .iq-navbar-custom {
+          justify-content: end;
+      }
+
+      .iq-navbar-logo {
+          justify-content: end;
+      }
+  </style>
   <body class="  ">
     <!-- loader Start -->
     <div id="loading">
@@ -27,19 +177,16 @@
     <!-- Wrapper Start -->
     <div class="wrapper">
       
-        <div class="iq-sidebar  sidebar-default ">
-            <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-                <a href="../html/index.html" class="header-logo">
-                    <img src="../assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">HelloShoe</h5>
+        <div class="iq-sidebar  sidebar-default " style="background-color: black">
+            <div class="iq-sidebar-logo d-flex align-items-center justify-content-center" style="padding-top: 20px">
+                <a href="../html/index.html" class="header-logo btn btn-primary btn-block text-center" style="background-color: #007bff; border-color: #007bff; color: white; padding: 0px; border-radius: 5px;">
+                    <span class="logo-title light-logo m-0">HelloShoeCompany</span>
                 </a>
-                <div class="iq-menu-bt-sidebar ml-0">
-                    <i class="las la-bars wrapper-menu"></i>
-                </div>
             </div>
             <div class="data-scrollbar" data-scroll="1">
                 <nav class="iq-sidebar-menu">
                     <ul id="iq-sidebar-toggle" class="iq-menu">
-                        <li class="active">
+                        <li class="">
                             <a href="../html/index.html" class="svg-icon">                        
                                 <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
@@ -211,12 +358,6 @@
         
                         </a>
                     </div>
-                    <div class="iq-search-bar device-search">
-                        <form action="#" class="searchbox">
-                            <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                            <input type="text" class="text search-input" placeholder="Search here...">
-                        </form>
-                    </div>
                     <div class="d-flex align-items-center">
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -226,7 +367,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto navbar-list align-items-center">
                                 <li>
-                                    <a href="#" class="btn border add-btn shadow-none mx-2 d-none d-md-block"
+                                    <a href="#" class="btn border add-btn shadow-none mx-2 d-none d-md-block bg-blue"
                                         data-toggle="modal" data-target="#new-order"><i class="las la-plus mr-2"></i>New Purchase</a>
                                 </li>
                                 <li class="nav-item nav-icon search-content">

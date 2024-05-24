@@ -4,6 +4,9 @@ let customerCode;
 var custCodeInput = $('#customerCode');
 var pointsInput = $('#totalPoints');
 var customers = [];
+// Set the customer code input field to '0001' and make it non-editable
+
+//Identify witch page using
 document.addEventListener("DOMContentLoaded", function() {
     var path = window.location.pathname;
     if (path.includes("page-add-customers.html")) {
@@ -115,9 +118,9 @@ function deleteCustomer(id,index) {
         url: baseUrl + "customers/" + id,
         method: "DELETE",
         success: function (res) {
-                alert('Customer deleted successfully');
-                closeModel(index,"delete");
-                getAllCustomers();
+            alert('Customer deleted successfully');
+            closeModel(index,"delete");
+            getAllCustomers();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
