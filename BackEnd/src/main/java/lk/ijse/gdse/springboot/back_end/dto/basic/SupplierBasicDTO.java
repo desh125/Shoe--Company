@@ -12,5 +12,4 @@ public class SupplierBasicDTO {
     private String supplierCode;
     private String name;
     private String email;
-    // Exclude inventoryItems and other detailed data that may cause recursion
 }

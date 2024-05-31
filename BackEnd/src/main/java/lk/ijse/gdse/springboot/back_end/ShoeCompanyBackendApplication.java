@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @Configuration
 @EnableJpaRepositories(basePackages = "lk.ijse.gdse.springboot.back_end.repo")
-public class HelloShoesBackendApplication {
+public class ShoeCompanyBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloShoesBackendApplication.class, args);
+		SpringApplication.run(ShoeCompanyBackendApplication.class, args);
 	}
 
 	@Bean
